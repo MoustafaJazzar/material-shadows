@@ -1,0 +1,51 @@
+{
+  "name": "material-shadows",
+  "version": "1.0.0",
+  "description": "Material design shadows for the web.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "tslint -p .",
+    "lint:fix": "tslint -p . --fix",
+    "clean": "rimraf dist docs",
+    "watch": "rollup --config --watch --environment INCLUDE_DEPS,NODE_ENV:development",
+    "copy": "cpx src/*.{html,png} dist ",
+    "copy:watch": " npm run copy -- --clean --watch ",
+    "copy:prod": " cpx dist/* docs",
+    "server": "lite-server --baseDir=\"dist\"",
+    "prestart": "npm run clean",
+    "start": "npm-run-all --parallel copy:watch watch server",
+    "minify:html": "html-minifier --input-dir dist --file-ext html --output-dir  dist --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --remove-tag-whitespace",
+    "dev": "npm start",
+    "prebuild": "npm-run-all clean copy lint:fix",
+    "build": "rollup -c --environment INCLUDE_DEPS,NODE_ENV:production",
+    "postbuild": "npm-run-all minify:html copy:prod"
+  },
+  "keywords": [
+    "material",
+    "shadows",
+    "design"
+  ],
+  "author": "Moustafa Jazzar",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@mvnu/cpx": "^1.5.2",
+    "autoprefixer": "^9.5.1",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "lite-server": "^2.4.0",
+    "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.12.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-node-resolve": "^5.0.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.5"
+  }
+}
