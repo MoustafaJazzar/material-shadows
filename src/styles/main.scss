@@ -35,3 +35,84 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
 }
+
+.btn {
+	border: 0;
+	outline: 0;
+	background: transparent;
+	padding: 0 16px;
+	position: relative;
+	border-radius: 4px;
+	overflow: hidden;
+	color: var(--primary-txt-color);
+	cursor: pointer;
+	user-select: none;
+	text-decoration: none;
+	white-space: nowrap;
+	display: inline-block;
+
+	&__inner {
+		display: grid;
+		grid-auto-flow: column;
+		gap: 8px;
+		place-items: center;
+		padding: 8px 0;
+		z-index: 2;
+	}
+
+	&__icon {
+		width: 18px;
+		height: 18px;
+
+		svg {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: black;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.2s cubic-bezier(0.35, 0, 0.25, 1);
+	}
+
+	&:hover &__overlay {
+		opacity: 0.1;
+	}
+}
+
+.nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: var(--primary-color);
+	padding: 0 16px;
+	box-shadow: var(--elevation-z3);
+	z-index: 10;
+
+	&__inner {
+		height: 100%;
+		margin: auto;
+		width: 100%;
+		max-width: var(--max-width);
+		padding: 8px 0;
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-columns: 1fr auto auto;
+		justify-items: start;
+
+		@media screen and (max-width: $break-small) {
+			.btn:not(:nth-child(1)) .btn__txt {
+				display: none;
+			}
+		}
+	}
+}
