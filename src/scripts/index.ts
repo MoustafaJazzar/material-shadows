@@ -1,6 +1,7 @@
 import '../styles/main.scss';
 import { Overlay } from './UI/Overlay';
 import './UI/Ripple';
+import './UI/Toast';
 
 class App {
 	DOM: any = {};
