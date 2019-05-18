@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+$primary-color: #3f51b5;
+$accent-color: #212121;
+$bg-color: #fafafa;
+$link-color: #3f51b5;
+$max-width: 1090px;
+$primary-txt-color: #ffffff;
+$break-small: 500px;
+
+:root {
+	--primary-color: #{$primary-color};
+	--accent-color: #{$accent-color};
+	--bg-color: #{$bg-color};
+	--link-color: #{$link-color};
+	--max-width: #{$max-width};
+	--primary-txt-color: #{$primary-txt-color};
+
+	--elevation-z3: 0 3px 3px -2px rgba(0, 0, 0, 0.2),
+		0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+}
+* {
+	box-sizing: border-box;
+	position: relative;
+	font-size: 14px;
+}
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--bg-color);
+	font-family: 'Roboto', sans-serif;
+	font-size: 14px;
+}
