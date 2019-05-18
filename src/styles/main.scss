@@ -116,3 +116,23 @@ body {
 		}
 	}
 }
+
+.header {
+	padding: 100px 0;
+	background: var(--primary-color);
+	color: var(--primary-txt-color);
+	text-align: center;
+	&__inner {
+		padding: 0 16px;
+	}
+	&__title {
+		font-size: 56px;
+		font-weight: 300;
+		margin: 16px 0;
+	}
+	&__subtitle {
+		font-size: 18px;
+		font-weight: 300;
+		margin: 16px 0;
+	}
+}
