@@ -136,3 +136,32 @@ body {
 		margin: 16px 0;
 	}
 }
+
+.footer {
+	padding: 16px;
+	color: var(--accent-color);
+	&__inner {
+		height: 48px;
+		max-width: var(--max-width);
+		margin: auto;
+		display: grid;
+		place-content: center;
+	}
+	&__icon {
+		width: 18px;
+		height: 18px;
+		display: inline-block;
+		margin: 0 4px;
+		vertical-align: text-bottom;
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__link {
+		text-decoration: none;
+		color: var(--link-color);
+	}
+}
