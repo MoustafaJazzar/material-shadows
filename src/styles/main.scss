@@ -137,6 +137,51 @@ body {
 	}
 }
 
+.main {
+	padding: 100px 16px;
+	width: 100%;
+	max-width: var(--max-width);
+	margin: auto;
+	display: grid;
+	gap: 60px;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+	.item {
+		height: 100px;
+		position: relative;
+		border-radius: 4px;
+		cursor: pointer;
+		overflow: hidden;
+		display: grid;
+		justify-content: end;
+		align-content: space-between;
+		padding: 8px;
+		user-select: none;
+		font-size: 18px;
+
+		&:nth-child(1) {
+			border: 1px solid;
+		}
+
+		&__icon,
+		&__counter {
+			width: 24px;
+			height: 24px;
+			display: grid;
+			place-content: center;
+		}
+
+		&__icon {
+			opacity: 0;
+			transition: opacity 0.2s ease;
+		}
+
+		&:hover .item__icon {
+			opacity: 0.3;
+		}
+	}
+}
+
 .footer {
 	padding: 16px;
 	color: var(--accent-color);
